@@ -1,0 +1,11 @@
+node{
+     stage('GIT PULL JOB'){
+        git 'https://github.com/sagarpinninti/test.git'
+    }
+    stage ('Data creation'){
+    sh "sh /var/lib/jenkins/workspace/git-jenkins-test/datetime.sh"
+    }
+    stage ('GIT PUSH steps'){
+   sh "sh /var/lib/jenkins/workspace/git-jenkins-test/push.sh"
+}
+}
